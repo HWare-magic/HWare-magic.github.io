@@ -152,6 +152,78 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-深度学习关于数据归一化的做法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/11/03/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%BD%92%E4%B8%80%E5%8C%96%E7%9A%84%E5%81%9A%E6%B3%95/">深度学习关于数据归一化的做法</a>
+    </h1>
+  
+
+        
+        <a href="/2022/11/03/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%BD%92%E4%B8%80%E5%8C%96%E7%9A%84%E5%81%9A%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2022-11-02T17:00:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="算法介绍"><a href="#算法介绍" class="headerlink" title="算法介绍"></a>算法介绍</h1><ul>
+<li>我的数据格式 ：是70个时序数据为一个特征 对应一个label  就是一个向量</li>
+<li>我需要做的是将每个特征中的70个数据 归一化成均值为零 方差为一的特征</li>
+<li>具体做法$\frac{(feature -feature.mean(dim&#x3D;-1))}{feature.std(dim&#x3D;-1)} $  这么做会使得输入的维度发生变化 是因为 mean 和std 方法会使得被操作的那个维度被消除，因此在操作是需要加入<code>keepdim = True</code>  这样使得输入的结果不会存在维度不同的问题</li>
+<li>这里训练的效果依然不是很好</li>
+</ul>
+<h1 id="后续的方案"><a href="#后续的方案" class="headerlink" title="后续的方案"></a>后续的方案</h1><ul>
+<li>需要在输出加入残差 同时 可以增大hidden的大小</li>
+<li>可以试着使用output做</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/11/03/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%BD%92%E4%B8%80%E5%8C%96%E7%9A%84%E5%81%9A%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
