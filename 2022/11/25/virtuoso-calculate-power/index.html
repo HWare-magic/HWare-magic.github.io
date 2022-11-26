@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="关于使用virtuoso 仿真信号是计算平均功耗进入EDA软件 1vittuoso &amp;   打开原理图画面    2.进入ADE L 的仿真页面  3.在输出页面进行计算  4.计算电压和电流的平均值  打开计算器后 先在曲线页面选中需要操作的线，再点击所需的函数  如 average    看出输出">
+    <meta name="description" content="关于使用virtuoso 仿真信号是计算平均功耗 进入EDA软件 1vittuoso &amp;   打开原理图画面   image-20221125212558624   2.进入ADE L 的仿真页面   image-20221125212942911  3.在输出页面进行计算   image-20221125213056788  4.计算电压和电流的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="virtuoso_calculate_power">
 <meta property="og:url" content="http://example.com/2022/11/25/virtuoso-calculate-power/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="关于使用virtuoso 仿真信号是计算平均功耗进入EDA软件 1vittuoso &amp;   打开原理图画面    2.进入ADE L 的仿真页面  3.在输出页面进行计算  4.计算电压和电流的平均值  打开计算器后 先在曲线页面选中需要操作的线，再点击所需的函数  如 average    看出输出">
+<meta property="og:description" content="关于使用virtuoso 仿真信号是计算平均功耗 进入EDA软件 1vittuoso &amp;   打开原理图画面   image-20221125212558624   2.进入ADE L 的仿真页面   image-20221125212942911  3.在输出页面进行计算   image-20221125213056788  4.计算电压和电流的">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2022/11/25/virtuoso-calculate-power/image-20221125212558624.png">
 <meta property="og:image" content="http://example.com/2022/11/25/virtuoso-calculate-power/image-20221125212942911.png">
@@ -112,7 +112,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E4%BD%BF%E7%94%A8virtuoso-%E4%BB%BF%E7%9C%9F%E4%BF%A1%E5%8F%B7%E6%98%AF%E8%AE%A1%E7%AE%97%E5%B9%B3%E5%9D%87%E5%8A%9F%E8%80%97"><span class="nav-number">1.</span> <span class="nav-text">关于使用virtuoso 仿真信号是计算平均功耗</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E4%BD%BF%E7%94%A8virtuoso-%E4%BB%BF%E7%9C%9F%E4%BF%A1%E5%8F%B7%E6%98%AF%E8%AE%A1%E7%AE%97%E5%B9%B3%E5%9D%87%E5%8A%9F%E8%80%97"><span class="nav-number">1.</span> <span class="nav-text">关于使用virtuoso
+仿真信号是计算平均功耗</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -200,26 +201,42 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="关于使用virtuoso-仿真信号是计算平均功耗"><a href="#关于使用virtuoso-仿真信号是计算平均功耗" class="headerlink" title="关于使用virtuoso 仿真信号是计算平均功耗"></a>关于使用virtuoso 仿真信号是计算平均功耗</h1><p>进入EDA软件</p>
+        <h1 id="关于使用virtuoso-仿真信号是计算平均功耗">关于使用virtuoso
+仿真信号是计算平均功耗</h1>
+<p>进入EDA软件</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vittuoso &amp; </span><br></pre></td></tr></table></figure>
-<ol>
+<ol type="1">
 <li><p>打开原理图画面</p>
-<p><img src="/2022/11/25/virtuoso-calculate-power/image-20221125212558624.png" alt="image-20221125212558624"></p>
-</li>
+<figure>
+<img src="/2022/11/25/virtuoso-calculate-power/image-20221125212558624.png" alt="image-20221125212558624">
+<figcaption aria-hidden="true">image-20221125212558624</figcaption>
+</figure></li>
 </ol>
 <p>2.进入ADE L 的仿真页面</p>
-<p><img src="/2022/11/25/virtuoso-calculate-power/image-20221125212942911.png" alt="image-20221125212942911"></p>
+<figure>
+<img src="/2022/11/25/virtuoso-calculate-power/image-20221125212942911.png" alt="image-20221125212942911">
+<figcaption aria-hidden="true">image-20221125212942911</figcaption>
+</figure>
 <p>3.在输出页面进行计算</p>
-<p><img src="/2022/11/25/virtuoso-calculate-power/image-20221125213056788.png" alt="image-20221125213056788"></p>
+<figure>
+<img src="/2022/11/25/virtuoso-calculate-power/image-20221125213056788.png" alt="image-20221125213056788">
+<figcaption aria-hidden="true">image-20221125213056788</figcaption>
+</figure>
 <p>4.计算电压和电流的平均值</p>
 <ul>
-<li>打开计算器后 先在曲线页面选中需要操作的线，再点击所需的函数  如 average</li>
+<li>打开计算器后 先在曲线页面选中需要操作的线，再点击所需的函数 如
+average</li>
 </ul>
-<p><img src="/2022/11/25/virtuoso-calculate-power/image-20221125213342915.png" alt="image-20221125213342915"></p>
+<figure>
+<img src="/2022/11/25/virtuoso-calculate-power/image-20221125213342915.png" alt="image-20221125213342915">
+<figcaption aria-hidden="true">image-20221125213342915</figcaption>
+</figure>
 <ul>
 <li><p>看出输出</p>
-<p><img src="/2022/11/25/virtuoso-calculate-power/image-20221125213413732.png" alt="image-20221125213413732"></p>
-</li>
+<figure>
+<img src="/2022/11/25/virtuoso-calculate-power/image-20221125213413732.png" alt="image-20221125213413732">
+<figcaption aria-hidden="true">image-20221125213413732</figcaption>
+</figure></li>
 </ul>
 
     </div>
@@ -300,6 +317,12 @@
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"per_page":true,"cdn":"//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML","tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
 
 
 
