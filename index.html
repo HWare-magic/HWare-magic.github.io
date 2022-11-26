@@ -880,9 +880,15 @@ False，可以采用action = 'store_true'来表示</p>
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-11-03 01:00:41 / Modified: 01:01:09" itemprop="dateCreated datePublished" datetime="2022-11-03T01:00:41+08:00">2022-11-03</time>
+      <time title="Created: 2022-11-03 01:00:41" itemprop="dateCreated datePublished" datetime="2022-11-03T01:00:41+08:00">2022-11-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-11-27 05:35:13" itemprop="dateModified" datetime="2022-11-27T05:35:13+08:00">2022-11-27</time>
     </span>
 
   
@@ -901,7 +907,7 @@ False，可以采用action = 'store_true'来表示</p>
 就是一个向量</li>
 <li>我需要做的是将每个特征中的70个数据 归一化成均值为零
 方差为一的特征</li>
-<li>具体做法$ $ 这么做会使得输入的维度发生变化 是因为 mean 和std
+<li>具体做法<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="0.036ex" height="0.036ex" role="img" focusable="false" viewbox="0 0 16 16"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"/></g></svg></mjx-container> 这么做会使得输入的维度发生变化 是因为 mean 和std
 方法会使得被操作的那个维度被消除，因此在操作是需要加入<code>keepdim = True</code>
 这样使得输入的结果不会存在维度不同的问题</li>
 <li>这里训练的效果依然不是很好</li>
