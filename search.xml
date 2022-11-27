@@ -99,7 +99,7 @@ you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p
       </categories>
   </entry>
   <entry>
-    <title>通过设置使得hexo正常显示图片和公式</title>
+    <title>hexo ——setting</title>
     <url>/2022/11/22/picture/</url>
     <content><![CDATA[<h1 id="插入图片">插入图片</h1>
 <figure>
@@ -204,6 +204,58 @@ you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p
 <p>重新编译和部署即可</p>
 <p>还有一点需要注意的是：插入的公式和$符号间不可以有空格
 否则无法显示</p>
+<h1 id="在hexo-根目录下的设置">在hexo 根目录下的设置</h1>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: Hexo </span><br><span class="line">subtitle: <span class="string">''</span></span><br><span class="line">description: <span class="string">''</span></span><br><span class="line">keywords:</span><br><span class="line">author: Hware-magic  ## 作者名称</span><br><span class="line">language: zh-CN #en # 中文</span><br><span class="line">timezone: Asia/Shanghai #<span class="string">''</span>  ## 时区设置 设置不对 在tag 和 分类上也会出错 </span><br></pre></td></tr></table></figure>
+<h1 id="添加标签页和分类页">添加标签页和分类页</h1>
+<p>在next 主题的设置文件下_config.yml</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">menu</span>:  ## 可以添加页面</span><br><span class="line">  home: / || fa fa-home</span><br><span class="line">  about: /about/ || fa fa-user</span><br><span class="line">  tags: /tags/ || fa fa-tags   ## charge for tag and categories</span><br><span class="line">  categories: /categories/ || fa fa-th</span><br><span class="line">  #archives: /archives/ || fa fa-archive</span><br><span class="line">  #schedule: /schedule/ || fa fa-calendar</span><br><span class="line">  #sitemap: /sitemap.xml || fa fa-sitemap</span><br><span class="line">  #commonweal: /<span class="number">404</span>/ || fa fa-heartbeat</span><br></pre></td></tr></table></figure>
+<p>效果如下</p>
+<figure>
+<img src="/2022/11/22/picture/image-20221127185450077.png" alt="image-20221127185450077">
+<figcaption aria-hidden="true">image-20221127185450077</figcaption>
+</figure>
+<h1 id="正确打开标签页和分类页">正确打开标签页和分类页</h1>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo n page tags</span><br></pre></td></tr></table></figure>
+<p>就会在source中创建tags文件夹，并在里面创建index.md文件，表示已经可以使用</p>
+<p>然后打开index.md 进行修改</p>
+<figure>
+<img src="/2022/11/22/picture/image-20221127185814449.png" alt="image-20221127185814449">
+<figcaption aria-hidden="true">image-20221127185814449</figcaption>
+</figure>
+<p>对于分类页同理，hexo n page categories 然后修改的时候type:
+"categories"</p>
+<h1 id="主题样式的更改">主题样式的更改</h1>
+<p>在next的主题配置文件里面 找到Schemes ，发现有四种主题：</p>
+<p>要用哪个就把哪个前面的#去掉，其它的三个加上# (#代表注释)；</p>
+<figure>
+<img src="/2022/11/22/picture/format,png.png" alt="image-20200628141115598">
+<figcaption aria-hidden="true">image-20200628141115598</figcaption>
+</figure>
+<h1 id="首页文章设置阅读全文">首页文章设置阅读全文</h1>
+<p>next的配置文件下，找到这里</p>
+<figure>
+<img src="/2022/11/22/picture/2022-11-27_19-04-19.png" alt="image-20221127190344421">
+<figcaption aria-hidden="true">image-20221127190344421</figcaption>
+</figure>
+<p>把这两个都设置为true，默认应该是true；</p>
+<p>然后有两种方法</p>
+<p>在博客的头部
+添加description，然后在后面输入你的描述，那么在你的博客中，这篇文章就只会显示你写的描述，剩下的由阅读全文这个按钮代替；</p>
+<figure>
+<img src="/2022/11/22/picture/image-20221127190637048.png" alt="image-20221127190637048">
+<figcaption aria-hidden="true">image-20221127190637048</figcaption>
+</figure>
+<p>第二种办法：</p>
+<p>在文章中输入这一行代码，那么默认这行代码之前的部分为描述，之后的部分在阅读全文中显示</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="增加搜索功能">增加搜索功能</h1>
+<p>下载依赖</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-seachdb -save</span><br></pre></td></tr></table></figure>
+<p>next的配置文件中，置local_search为true</p>
+<figure>
+<img src="/2022/11/22/picture/image-20221127190945039.png" alt="image-20221127190945039">
+<figcaption aria-hidden="true">image-20221127190945039</figcaption>
+</figure>
 ]]></content>
   </entry>
   <entry>
