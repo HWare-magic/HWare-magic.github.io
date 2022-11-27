@@ -369,4 +369,31 @@ average</li>
 </ul>
 ]]></content>
   </entry>
+  <entry>
+    <title>CIM learning</title>
+    <url>/2022/11/28/CIM-learning/</url>
+    <content><![CDATA[<ul>
+<li>首先介绍什么是存算：顾名思义是指存储和计算在一起发生
+，有别于经典的冯诺伊曼结构 分为处理器和存储器
+这是将两者结合在一起的器件</li>
+<li>有以下几个优点
+<ul>
+<li>计算速度快，减少了从存储单元到计算单元的时间，可以避免所谓的存储墙的限制</li>
+<li>在数据变化较小的场景有优势 运行速率有很大的提升</li>
+</ul></li>
+<li>不足在于
+<ul>
+<li>会有很多冗余单元 使得功耗大资源利用率低</li>
+<li>同时当输入较大时 所需的输入带宽特别的大</li>
+</ul></li>
+<li>在物联网的边缘设备还是有空间的</li>
+</ul>
+<h2 id="关于存储器的介绍">关于存储器的介绍</h2>
+<p>目前主流的存算还是在DRAM 上操作的 因为成本较低 工艺成熟</p>
+<p>还有在flash上做的 模拟的存算居多</p>
+]]></content>
+      <categories>
+        <category>概念</category>
+      </categories>
+  </entry>
 </search>
