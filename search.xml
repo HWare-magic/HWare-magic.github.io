@@ -408,4 +408,39 @@ average</li>
         <category>概念</category>
       </categories>
   </entry>
+  <entry>
+    <title>DIy_idea</title>
+    <url>/2022/12/02/DIy-idea/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，这个密码看着不太对，请再试试。" data-whm="抱歉，这个文章不能被纠正，不过您还是能看看解密后的内容。">
+  <script id="hbeData" type="hbeData" data-hmacdigest="c39ca431ff86e592ebab7695739b9e4964ccdb775f9def5f3bb3ec7a48ab7061">2d4ebdf74f312f3f0abd14fe7326a94e040553e05044b57d3eb74ab2a51baa37bcef9753c3f43f8010983d33b76dc6f442f5296c5d612fa495f3c71d0fe05fa0a1e57ec2d6db02272ba20bd400810f3593b85de4966eb9da543d68c68a5aa6ab197e1816590ad89a7672024fbcc7d1df290ade8f1be8fd37bd88174a6a02a30decfd64b3be48ecb28e5462d0816cd835513a9c397a857feee2aafe9ce18ecbf26372940b7788f83d63117ea8d751107dd14b3ce48eaa5c2b1286d89f1c52c2247d964e5134ad7a7195805c00ec683c27f6c926014e36cab0b1a9b8f223b7a71b0afa6dc8f6fb0fd9ace368d157ddc5d82298b8a3c4e48d9b04f3cf25732961476601ec9eec689ac7288ae27b0d4e41b04891b7ac49781db73b3692c266e15ed091be5d24332cd9cb5f0eb5e461b2c03a88031ef1670751b615008d9a13707458ace1fc35245d9157ea31f883f818b3653337897dbdcb9d2c438fc14d9f076dad61fa9b600b5ff3f23c3e73ede1e916591e18af668c379372b9cdc5448d17d6d2254aca2e03a91ec49567f293f116c369b52629bf24cb966bb726b38a40b673381a13bc7b9c81c9f805e81f2027c3177aefb92ed7dfc2b85691cd62c8f9a5dd4866829a2098b899c212533c37ff21cd2ca47b9aab2b5552ee27a9132848718fd39a5804e8e27457ff13985aa8aa580f31</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好，这里需要密码。</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>idea</category>
+      </categories>
+      <tags>
+        <tag>加密文章tag</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>circuit_design</title>
+    <url>/2022/12/02/circuit-design/</url>
+    <content><![CDATA[<p><img src="/2022/12/02/circuit-design/image-20221202234224857.png" alt="image-20221202234224857"></p>
+<p><img src="/2022/12/02/circuit-design/image-20221202234254522.png" alt="image-20221202234254522"></p>
+<p><img src="/2022/12/02/circuit-design/image-20221202234335086.png" alt="image-20221202234335086"></p>
+<p><strong>信号处理电路</strong>  </p>
+<p>信号处理电路主要利用集成运算放大器或专用模拟集成电路， 配以少量的外接元件可以构成各种功能的处理电路。主要功能有信号放大、信号滤波、阻抗匹配、电平变换、非线性补偿、电流/电压转换、电压/频率转换等。上图，运放组成的有源低通滤波器。</p>
+]]></content>
+      <categories>
+        <category>circuit</category>
+      </categories>
+  </entry>
 </search>
