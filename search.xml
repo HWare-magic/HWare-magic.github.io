@@ -487,4 +487,100 @@ average</li>
         <tag>加密文章tag</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Chatgpt</title>
+    <url>/2022/12/09/Chatgpt/</url>
+    <content><![CDATA[<h1 id="名称由来">名称由来</h1>
+<p>主要是GPT（generate pre-train
+transformer），谷歌开发的openai中的爆火人机聊天工具，有替代主流搜索的趋势</p>
+<h1 id="使用效果">使用效果</h1>
+<figure>
+<img src="/2022/12/09/Chatgpt/image-20221209020132275.png" alt="image-20221209020132275">
+<figcaption aria-hidden="true">image-20221209020132275</figcaption>
+</figure>
+<figure>
+<img src="/2022/12/09/Chatgpt/image-20221209020206138.png" alt="image-20221209020206138">
+<figcaption aria-hidden="true">image-20221209020206138</figcaption>
+</figure>
+<p>实现简单的一元二次方程的结果，完全正确，直接一键复制</p>
+<figure>
+<img src="/2022/12/09/Chatgpt/image-20221209020345842.png" alt="image-20221209020345842">
+<figcaption aria-hidden="true">image-20221209020345842</figcaption>
+</figure>
+<p>关于简单的demo程序 完全没问题,甚至可以进一步优化</p>
+<figure>
+<img src="/2022/12/09/Chatgpt/image-20221209020432428.png" alt="image-20221209020432428">
+<figcaption aria-hidden="true">image-20221209020432428</figcaption>
+</figure>
+<figure>
+<img src="/2022/12/09/Chatgpt/image-20221209020548352.png" alt="image-20221209020548352">
+<figcaption aria-hidden="true">image-20221209020548352</figcaption>
+</figure>
+<p>算法框架也没问题 轻轻松松,感受下它的恐怖吧 甚至有注释</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义GRU网络</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">GRU</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, input_size, hidden_size, num_layers</span>):</span><br><span class="line">        <span class="built_in">super</span>(GRU, self).__init__()</span><br><span class="line">        self.gru = nn.GRU(input_size, hidden_size, num_layers)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, <span class="built_in">input</span>, hidden</span>):</span><br><span class="line">        output, hidden = self.gru(<span class="built_in">input</span>, hidden)</span><br><span class="line">        <span class="keyword">return</span> output, hidden</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义损失函数</span></span><br><span class="line">criterion = nn.CrossEntropyLoss()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义优化器</span></span><br><span class="line">optimizer = torch.optim.Adam(model.parameters())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 训练模型</span></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(num_epochs):</span><br><span class="line">    hidden = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">for</span> inputs, labels <span class="keyword">in</span> train_data:</span><br><span class="line">        <span class="comment"># 清空梯度</span></span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 前向计算</span></span><br><span class="line">        outputs, hidden = model(inputs, hidden)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 计算损失</span></span><br><span class="line">        loss = criterion(outputs, labels)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 反向传播</span></span><br><span class="line">        loss.backward()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 更新参数</span></span><br><span class="line">        optimizer.step()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存模型</span></span><br><span class="line">torch.save(model.state_dict(), <span class="string">&#x27;model.pth&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>提出优化需求</p>
+<figure>
+<img src="/2022/12/09/Chatgpt/image-20221209020726410.png" alt="image-20221209020726410">
+<figcaption aria-hidden="true">image-20221209020726410</figcaption>
+</figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义MSE损失函数</span></span><br><span class="line">criterion = nn.MSELoss()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 训练模型</span></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(num_epochs):</span><br><span class="line">    hidden = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">for</span> inputs, labels <span class="keyword">in</span> train_data:</span><br><span class="line">        <span class="comment"># 清空梯度</span></span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 前向计算</span></span><br><span class="line">        outputs, hidden = model(inputs, hidden)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 计算损失</span></span><br><span class="line">        loss = criterion(outputs, labels)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 反向传播</span></span><br><span class="line">        loss.backward()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 更新参数</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2022/12/09/Chatgpt/image-20221209020852286.png" alt="image-20221209020852286">
+<figcaption aria-hidden="true">image-20221209020852286</figcaption>
+</figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义损失函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">custom_loss</span>(<span class="params">outputs, labels</span>):</span><br><span class="line">    loss = torch.<span class="built_in">abs</span>(outputs - labels).mean()</span><br><span class="line">    <span class="keyword">return</span> loss</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义优化器</span></span><br><span class="line">optimizer = torch.optim.Adam(model.parameters())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 训练模型</span></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(num_epochs):</span><br><span class="line">    hidden = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">for</span> inputs, labels <span class="keyword">in</span> train_data:</span><br><span class="line">        <span class="comment"># 清空梯度</span></span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 前向计算</span></span><br><span class="line">        outputs, hidden = model(inputs, hidden)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 计算损失</span></span><br><span class="line">        loss = custom_loss(outputs, labels)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 反向传播</span></span><br><span class="line">        loss.backward()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 更新参数</span></span><br><span class="line">        optimizer.step()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存模型</span></span><br><span class="line">torch.save(model.state_dict(), <span class="string">&#x27;model.pth&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2022/12/09/Chatgpt/image-20221209020941208.png" alt="image-20221209020941208">
+<figcaption aria-hidden="true">image-20221209020941208</figcaption>
+</figure>
+<p>这里应该是重复的问题了</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义损失函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">custom_loss</span>(<span class="params">outputs, labels</span>):</span><br><span class="line">    loss = torch.<span class="built_in">abs</span>(outputs - labels).mean()</span><br><span class="line">    <span class="keyword">return</span> loss</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义优化器</span></span><br><span class="line">optimizer = torch.optim.Adam(model.parameters())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 训练模型</span></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(num_epochs):</span><br><span class="line">    hidden = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">for</span> inputs, labels <span class="keyword">in</span> train_data:</span><br><span class="line">        <span class="comment"># 清空梯度</span></span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 前向计算</span></span><br><span class="line">        outputs, hidden = model(inputs, hidden)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 计算损失</span></span><br><span class="line">        loss = custom_loss(outputs, labels)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 反向传播</span></span><br><span class="line">        loss.backward()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 更新参数</span></span><br><span class="line">        optimizer.step()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存模型</span></span><br><span class="line">torch.save(model.state_dict(), <span class="string">&#x27;model.pth&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2022/12/09/Chatgpt/image-20221209021131138.png" alt="image-20221209021131138">
+<figcaption aria-hidden="true">image-20221209021131138</figcaption>
+</figure>
+<figure>
+<img src="/2022/12/09/Chatgpt/image-20221209021149585.png" alt="image-20221209021149585">
+<figcaption aria-hidden="true">image-20221209021149585</figcaption>
+</figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义网络</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Net</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, input_size, hidden_size, num_layers</span>):</span><br><span class="line">        <span class="built_in">super</span>(Net, self).__init__()</span><br><span class="line">        self.fc1 = nn.Lin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义网络</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Net</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, input_size, hidden_size, num_layers</span>):</span><br><span class="line">        <span class="built_in">super</span>(Net, self).__init__()</span><br><span class="line">        self.fc1 = nn.Linear(input_size, hidden_size)</span><br><span class="line">        self.fc2 = nn.Linear(hidden_size, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, inputs, covariates</span>):</span><br><span class="line">        <span class="comment"># 拼接数据</span></span><br><span class="line">        inputs = torch.cat([inputs, covariates], dim=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 前向计算</span></span><br><span class="line">        hidden = self.fc1(inputs)</span><br><span class="line">        outputs = self.fc2(hidden)</span><br><span class="line">        <span class="keyword">return</span> outputs</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2022/12/09/Chatgpt/image-20221209021326985.png" alt="image-20221209021326985">
+<figcaption aria-hidden="true">image-20221209021326985</figcaption>
+</figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 保存模型</span></span><br><span class="line">torch.save(model.state_dict(), <span class="string">&#x27;model.pth&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载模型</span></span><br><span class="line">model.load_state_dict(torch.load(<span class="string">&#x27;model.pth&#x27;</span>))</span><br><span class="line"></span><br><span class="line">pip install torchviz</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> torchviz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可视化模型</span></span><br><span class="line">torchviz.make_dot(model(inputs))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可视化模型</span></span><br><span class="line">graph = torchviz.make_dot(model(inputs))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存图片</span></span><br><span class="line">graph.save(<span class="string">&#x27;model.png&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2022/12/09/Chatgpt/image-20221209021449986.png" alt="image-20221209021449986">
+<figcaption aria-hidden="true">image-20221209021449986</figcaption>
+</figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 获取模型的参数</span></span><br><span class="line">params = model.state_dict()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出第一层的参数</span></span><br><span class="line"><span class="built_in">print</span>(params[<span class="string">&#x27;fc1.weight&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(params[<span class="string">&#x27;fc1.bias&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出第二层的参数</span></span><br><span class="line"><span class="built_in">print</span>(params[<span class="string">&#x27;fc2.weight&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(params[<span class="string">&#x27;fc2.bias&#x27;</span>])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2022/12/09/Chatgpt/image-20221209021557959.png" alt="image-20221209021557959">
+<figcaption aria-hidden="true">image-20221209021557959</figcaption>
+</figure>
+<figure>
+<img src="/2022/12/09/Chatgpt/image-20221209021619119.png" alt="image-20221209021619119">
+<figcaption aria-hidden="true">image-20221209021619119</figcaption>
+</figure>
+<p>都是些日常会遇到的一些问题，通过搜索引擎回答的效果 远不如它</p>
+<h1 id="它的结构">它的结构</h1>
+<p>这个是通过学习李弘毅的分析来的，有可能有差错</p>
+<ul>
+<li>首先它能实现了是NLP 就是文字续写</li>
+<li>人类的指导文字接龙的方向
+（这里有人类来思考GPT的问题，并且需要提供正确答案）
+<ul>
+<li>这里没有穷尽所有问题的答案</li>
+<li>人类的作用是选择答案</li>
+</ul></li>
+<li>模范人类的喜好（感觉和第二步是类似的，后续是使用一个teacher model
+来打分）</li>
+<li>用增强学习的方式向模拟老师学习
+，把上面的模型来进行调整参数，也就是增强学习的reward</li>
+</ul>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+  </entry>
 </search>
