@@ -583,4 +583,28 @@ transformer），谷歌开发的openai中的爆火人机聊天工具，有替代
         <category>编程</category>
       </categories>
   </entry>
+  <entry>
+    <title>np and pd datatype</title>
+    <url>/2022/12/15/np-and-pd-datatype/</url>
+    <content><![CDATA[<h1 id="numpy-array">numpy array</h1>
+<ul>
+<li><p>创建方式</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a=np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],dtype=<span class="built_in">float</span>,copy=<span class="literal">True</span>)  <span class="comment"># 其作用是将其他类型的数据转化为np.array</span></span><br><span class="line"><span class="comment"># np.array的创建 有以下几种方式</span></span><br><span class="line"><span class="comment">#创建空数组</span></span><br><span class="line">np.empty((<span class="number">3</span>,<span class="number">4</span>))</span><br><span class="line"><span class="comment">## 创建全零</span></span><br><span class="line">np.zeros((<span class="number">3</span>,<span class="number">4</span>))</span><br><span class="line">np.zeros_like(a)</span><br><span class="line"><span class="comment">#创建全一</span></span><br><span class="line">np.ones((<span class="number">3</span>,<span class="number">4</span>),order=<span class="string">&#x27;F&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="pd.dataframe">pd.dataFrame</h1>
+<ul>
+<li><p>创建方法</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">b= pd.DataFrame()</span><br><span class="line">b[][] <span class="comment">#等同于b[].values[] 第一个[]的切片为serial 第二个的切片为np.array</span></span><br></pre></td></tr></table></figure></li>
+<li><p>np的一维会被当成df的一个serial 也就是可以认为是一列</p></li>
+<li><p>通过df的切片访问到的是serial对象<br>
+</p></li>
+<li><p>通过serial对象的values可以变为np.array</p></li>
+<li><p>这时对np.array就可以进行切片得到单元格的数据</p></li>
+<li><p>还可以通过对df的行列同时进行切片得到np类型数据</p></li>
+</ul>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+  </entry>
 </search>

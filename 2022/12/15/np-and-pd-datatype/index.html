@@ -19,31 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="信号产生电路">
+    <meta name="description" content="关于np和pd.dataFrame的区别">
 <meta property="og:type" content="article">
-<meta property="og:title" content="circuit_design">
-<meta property="og:url" content="http://example.com/2022/12/02/circuit-design/index.html">
+<meta property="og:title" content="np and pd datatype">
+<meta property="og:url" content="http://example.com/2022/12/15/np-and-pd-datatype/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="信号产生电路">
+<meta property="og:description" content="关于np和pd.dataFrame的区别">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/12/02/circuit-design/image-20221202234224857.png">
-<meta property="og:image" content="http://example.com/2022/12/02/circuit-design/image-20221202234254522.png">
-<meta property="og:image" content="http://example.com/2022/12/02/circuit-design/image-20221202234335086.png">
-<meta property="article:published_time" content="2022-12-02T15:41:09.000Z">
-<meta property="article:modified_time" content="2022-12-02T15:43:59.275Z">
+<meta property="article:published_time" content="2022-12-14T19:51:14.000Z">
+<meta property="article:modified_time" content="2022-12-14T19:59:47.467Z">
 <meta property="article:author" content="Hware-magic">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2022/12/02/circuit-design/image-20221202234224857.png">
 
 
-<link rel="canonical" href="http://example.com/2022/12/02/circuit-design/">
+<link rel="canonical" href="http://example.com/2022/12/15/np-and-pd-datatype/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/12/02/circuit-design/","path":"2022/12/02/circuit-design/","title":"circuit_design"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/12/15/np-and-pd-datatype/","path":"2022/12/15/np-and-pd-datatype/","title":"np and pd datatype"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>circuit_design | Hexo</title>
+<title>np and pd datatype | Hexo</title>
   
 
 
@@ -135,7 +131,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -148,6 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#numpy-array"><span class="nav-number">1.</span> <span class="nav-text">numpy array</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pd.dataframe"><span class="nav-number">2.</span> <span class="nav-text">pd.dataFrame</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -206,7 +203,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/02/circuit-design/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/15/np-and-pd-datatype/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -219,12 +216,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="circuit_design | Hexo">
-      <meta itemprop="description" content="信号产生电路">
+      <meta itemprop="name" content="np and pd datatype | Hexo">
+      <meta itemprop="description" content="关于np和pd.dataFrame的区别">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          circuit_design
+          np and pd datatype
         </h1>
 
         <div class="post-meta-container">
@@ -236,7 +233,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-12-02 23:41:09 / 修改时间：23:43:59" itemprop="dateCreated datePublished" datetime="2022-12-02T23:41:09+08:00">2022-12-02</time>
+      <time title="创建时间：2022-12-15 03:51:14 / 修改时间：03:59:47" itemprop="dateCreated datePublished" datetime="2022-12-15T03:51:14+08:00">2022-12-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -244,14 +241,14 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/circuit/" itemprop="url" rel="index"><span itemprop="name">circuit</span></a>
+          <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
         </span>
     </span>
 
   
 </div>
 
-            <div class="post-description">信号产生电路</div>
+            <div class="post-description">关于np和pd.dataFrame的区别</div>
         </div>
       </header>
 
@@ -259,11 +256,22 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p><img src="/2022/12/02/circuit-design/image-20221202234224857.png" alt="image-20221202234224857"></p>
-<p><img src="/2022/12/02/circuit-design/image-20221202234254522.png" alt="image-20221202234254522"></p>
-<p><img src="/2022/12/02/circuit-design/image-20221202234335086.png" alt="image-20221202234335086"></p>
-<p><strong>信号处理电路</strong>  </p>
-<p>信号处理电路主要利用集成运算放大器或专用模拟集成电路， 配以少量的外接元件可以构成各种功能的处理电路。主要功能有信号放大、信号滤波、阻抗匹配、电平变换、非线性补偿、电流/电压转换、电压/频率转换等。上图，运放组成的有源低通滤波器。</p>
+        <h1 id="numpy-array">numpy array</h1>
+<ul>
+<li><p>创建方式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a=np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],dtype=<span class="built_in">float</span>,copy=<span class="literal">True</span>)  <span class="comment"># 其作用是将其他类型的数据转化为np.array</span></span><br><span class="line"><span class="comment"># np.array的创建 有以下几种方式</span></span><br><span class="line"><span class="comment">#创建空数组</span></span><br><span class="line">np.empty((<span class="number">3</span>,<span class="number">4</span>))</span><br><span class="line"><span class="comment">## 创建全零</span></span><br><span class="line">np.zeros((<span class="number">3</span>,<span class="number">4</span>))</span><br><span class="line">np.zeros_like(a)</span><br><span class="line"><span class="comment">#创建全一</span></span><br><span class="line">np.ones((<span class="number">3</span>,<span class="number">4</span>),order=<span class="string">&#x27;F&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="pd.dataframe">pd.dataFrame</h1>
+<ul>
+<li><p>创建方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">b= pd.DataFrame()</span><br><span class="line">b[][] <span class="comment">#等同于b[].values[] 第一个[]的切片为serial 第二个的切片为np.array</span></span><br></pre></td></tr></table></figure></li>
+<li><p>np的一维会被当成df的一个serial 也就是可以认为是一列</p></li>
+<li><p>通过df的切片访问到的是serial对象<br>
+</p></li>
+<li><p>通过serial对象的values可以变为np.array</p></li>
+<li><p>这时对np.array就可以进行切片得到单元格的数据</p></li>
+<li><p>还可以通过对df的行列同时进行切片得到np类型数据</p></li>
+</ul>
 
     </div>
 
@@ -277,14 +285,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/12/02/DIy-idea/" rel="prev" title="DIy_idea">
-                  <i class="fa fa-chevron-left"></i> DIy_idea
+                <a href="/2022/12/09/Chatgpt/" rel="prev" title="Chatgpt">
+                  <i class="fa fa-chevron-left"></i> Chatgpt
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/12/06/gas-algorithm/" rel="next" title="gas_algorithm">
-                  gas_algorithm <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
