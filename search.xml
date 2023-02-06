@@ -665,16 +665,24 @@ transformer），谷歌开发的openai中的爆火人机聊天工具，有替代
   <entry>
     <title>mathematica教程</title>
     <url>/2023/02/07/mathematica%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<h1 id="安装教程："><a href="#安装教程：" class="headerlink" title="安装教程："></a>安装教程：</h1><p>百度网盘：<a href="https://pan.baidu.com/s/11fApQzZPsfZ4uEm_9jKv0A?pwd=mrup">https://pan.baidu.com/s/11fApQzZPsfZ4uEm_9jKv0A?pwd=mrup</a></p>
+    <content><![CDATA[<h1 id="安装教程">安装教程：</h1>
+<p>百度网盘：https://pan.baidu.com/s/11fApQzZPsfZ4uEm_9jKv0A?pwd=mrup</p>
 <p>下载后解压完成直接安装激活，</p>
-<p><img src="/2023/02/07/mathematica%E6%95%99%E7%A8%8B/image-20230207004323477.png" alt="image-20230207004323477"></p>
+<figure>
+<img src="/2023/02/07/mathematica%E6%95%99%E7%A8%8B/image-20230207004323477.png" alt="image-20230207004323477">
+<figcaption aria-hidden="true">image-20230207004323477</figcaption>
+</figure>
 <p>激活需要选择手动安装，</p>
-<p><img src="/2023/02/07/mathematica%E6%95%99%E7%A8%8B/image-20230207004112913.png" alt="image-20230207004112913"></p>
+<figure>
+<img src="/2023/02/07/mathematica%E6%95%99%E7%A8%8B/image-20230207004112913.png" alt="image-20230207004112913">
+<figcaption aria-hidden="true">image-20230207004112913</figcaption>
+</figure>
 <p>最后激活成功就可使用</p>
-<h1 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h1><p>求导数</p>
-<p>=D[f(x),x] </p>
+<h1 id="简单使用">简单使用</h1>
+<p>求导数</p>
+<p>=D[f(x),x]</p>
 <p>求微分方程通解/求方程的解</p>
-<p>=DSolve[f(‘x)=f(x)+x,f(x),x]</p>
+<p>=DSolve[f('x)=f(x)+x,f(x),x]</p>
 ]]></content>
       <categories>
         <category>编程</category>
