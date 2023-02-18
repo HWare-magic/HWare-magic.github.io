@@ -688,4 +688,64 @@ transformer），谷歌开发的openai中的爆火人机聊天工具，有替代
         <category>编程</category>
       </categories>
   </entry>
+  <entry>
+    <title>alist 挂载网盘</title>
+    <url>/2023/02/18/alist-%E6%8C%82%E8%BD%BD%E7%BD%91%E7%9B%98/</url>
+    <content><![CDATA[<p>所需工具：1. alist 3.80版本 （最新的版本有会卡机的情况）</p>
+<p>​ 2. raildrive 2022.6.92版本</p>
+<p>分享连接：链接:
+https://pan.baidu.com/s/1ccfdIl8U3PZVYkv9yiOCWg?pwd=qgxb 提取码:
+qgxb</p>
+<h2 id="安装alist">安装alist</h2>
+<p>1.解压后在alist文件夹处运行命令行窗口</p>
+<p>2.在命令行窗口运行alist server 复制密码</p>
+<figure>
+<img src="/2023/02/18/alist-%E6%8C%82%E8%BD%BD%E7%BD%91%E7%9B%98/image-20230218143938223.png" alt="image-20230218143938223">
+<figcaption aria-hidden="true">image-20230218143938223</figcaption>
+</figure>
+<p>3.在网页段打开链接 127.0.0.1:5244</p>
+<p>4.点击页面下方登录按钮 用户名自己设置例如：admin
+密码为第二步复制的密码</p>
+<p>5.点击下方管理页面，再点击存储,在左侧点击添加</p>
+<figure>
+<img src="/2023/02/18/alist-%E6%8C%82%E8%BD%BD%E7%BD%91%E7%9B%98/image-20230218144357057.png" alt="image-20230218144357057">
+<figcaption aria-hidden="true">image-20230218144357057</figcaption>
+</figure>
+<p>6.添加上百度网盘进行配置</p>
+<figure>
+<img src="/2023/02/18/alist-%E6%8C%82%E8%BD%BD%E7%BD%91%E7%9B%98/image-20230218144507793.png" alt="image-20230218144507793">
+<figcaption aria-hidden="true">image-20230218144507793</figcaption>
+</figure>
+<p>7.挂载路径/任意名称， web代理需要打开 代理策略选择
+使用代理地址，或者本地地址都可以。</p>
+<p><strong>8.下载接口这里选择官方的，非官方的失效了</strong></p>
+<p>9.其余的三个 刷新令牌 客户端ID 客户端密钥
+需要打开网页版的百度网盘，然后</p>
+<p>通过这个连接：<a href="https://alist.nn.ci/zh/guide/drivers/baidu.html">百度网盘 |
+AList文档 (nn.ci)</a>，点击刷新令牌来获取</p>
+<figure>
+<img src="/2023/02/18/alist-%E6%8C%82%E8%BD%BD%E7%BD%91%E7%9B%98/image-20230218145024358.png" alt="image-20230218145024358">
+<figcaption aria-hidden="true">image-20230218145024358</figcaption>
+</figure>
+<p>这样填写好后，就可以点击保存，然后看到</p>
+<figure>
+<img src="/2023/02/18/alist-%E6%8C%82%E8%BD%BD%E7%BD%91%E7%9B%98/image-20230218145140250.png" alt="image-20230218145140250">
+<figcaption aria-hidden="true">image-20230218145140250</figcaption>
+</figure>
+<p>就表示挂载成功，可以在网页上进行百度网盘的视频观看，可以通过idm等下载器进行下载，不过对于pdf需要关闭该网页的自动下载才能开看pdf</p>
+<h2 id="raildrive挂载百度网盘到本地">raildrive挂载百度网盘到本地</h2>
+<figure>
+<img src="/2023/02/18/alist-%E6%8C%82%E8%BD%BD%E7%BD%91%E7%9B%98/image-20230218145537739.png" alt="image-20230218145537739">
+<figcaption aria-hidden="true">image-20230218145537739</figcaption>
+</figure>
+<p>1.打开软件，找到上方的添加，得到如上图所示，按上图所示进行填写</p>
+<p>2.账号 密码就是alist网页登陆的账号密码</p>
+<p>这样就要可以把百度网盘放到本都，可以实现查看和拖拽复制，不过本地拖拽到网盘
+会显示权限不足，目前未解决，还是用百度网盘
+自带的上传功能（主要上传不着急，就是着急下载对吧）</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+  </entry>
 </search>
