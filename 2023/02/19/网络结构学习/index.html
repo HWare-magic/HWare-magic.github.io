@@ -19,27 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="关于np和pd.dataFrame的区别">
+    <meta name="description" content="计算机网络的结构以及协议">
 <meta property="og:type" content="article">
-<meta property="og:title" content="np and pd datatype">
-<meta property="og:url" content="http://example.com/2022/12/15/np-and-pd-datatype/index.html">
+<meta property="og:title" content="网络结构学习">
+<meta property="og:url" content="http://example.com/2023/02/19/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="关于np和pd.dataFrame的区别">
+<meta property="og:description" content="计算机网络的结构以及协议">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-12-14T19:51:14.000Z">
-<meta property="article:modified_time" content="2022-12-14T19:59:47.467Z">
+<meta property="og:image" content="http://example.com/2023/02/19/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84.png">
+<meta property="article:published_time" content="2023-02-18T16:32:32.000Z">
+<meta property="article:modified_time" content="2023-02-18T16:40:20.263Z">
 <meta property="article:author" content="Hware-magic">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/02/19/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84.png">
 
 
-<link rel="canonical" href="http://example.com/2022/12/15/np-and-pd-datatype/">
+<link rel="canonical" href="http://example.com/2023/02/19/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/12/15/np-and-pd-datatype/","path":"2022/12/15/np-and-pd-datatype/","title":"np and pd datatype"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/02/19/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0/","path":"2023/02/19/网络结构学习/","title":"网络结构学习"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>np and pd datatype | Hexo</title>
+<title>网络结构学习 | Hexo</title>
   
 
 
@@ -144,7 +146,12 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#numpy-array"><span class="nav-number">1.</span> <span class="nav-text">numpy array</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pd.dataframe"><span class="nav-number">2.</span> <span class="nav-text">pd.dataFrame</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">网络结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E5%B1%82physical-layer%E5%AE%9A%E4%B9%89%E7%89%A9%E7%90%86%E4%BB%8B%E8%B4%A8%E6%8E%A5%E5%8F%A3%E5%92%8C%E4%BC%A0%E8%BE%93%E9%80%9F%E7%8E%87"><span class="nav-number">1.1.</span> <span class="nav-text">物理层（Physical
+Layer）:定义物理介质、接口和传输速率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82data-link-layer%E6%8F%90%E4%BE%9B%E5%8F%AF%E9%9D%A0%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E6%A3%80%E6%B5%8B%E5%92%8C%E7%BA%A0%E6%AD%A3%E4%BC%A0%E8%BE%93%E9%94%99%E8%AF%AF"><span class="nav-number">1.2.</span> <span class="nav-text">数据链路层（Data
+Link Layer）:提供可靠的数据传输，检测和纠正传输错误</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%83%E8%B4%9F%E8%B4%A3%E5%B0%86%E6%AF%94%E7%89%B9%E6%B5%81%E7%BB%84%E8%A3%85%E6%88%90%E5%B8%A7frame%E5%B9%B6%E8%BF%9B%E8%A1%8C%E5%B7%AE%E9%94%99%E6%8E%A7%E5%88%B6"><span class="nav-number">1.2.1.</span> <span class="nav-text">它负责将比特流组装成帧（Frame）并进行差错控制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82network-layer%E7%A1%AE%E5%AE%9A%E6%95%B0%E6%8D%AE%E7%9A%84%E6%9C%80%E4%BD%B3%E8%B7%AF%E5%BE%84%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%8C%85%E7%9A%84%E4%BC%A0%E8%BE%93"><span class="nav-number">1.3.</span> <span class="nav-text">网络层（Network
+Layer）:确定数据的最佳路径，实现数据包的传输</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82transport-layer"><span class="nav-number">1.4.</span> <span class="nav-text">传输层（Transport Layer）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%9A%E8%AF%9D%E5%B1%82session-layer"><span class="nav-number">1.5.</span> <span class="nav-text">会话层（Session Layer）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8%E7%A4%BA%E5%B1%82presentation-layer"><span class="nav-number">1.6.</span> <span class="nav-text">表示层（Presentation Layer）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82application-layer"><span class="nav-number">1.7.</span> <span class="nav-text">应用层（Application Layer）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tcpip-%E7%BD%91%E7%BB%9C%E5%B1%82%E5%BC%80%E5%A7%8B%E7%9A%845%E4%B8%AA%E5%B1%82%E5%A4%A7%E8%87%B4%E4%B8%BAtcpip"><span class="nav-number">1.8.</span> <span class="nav-text">TCP&#x2F;IP
+：网络层开始的5个层大致为TCP&#x2F;IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#osi%E6%A8%A1%E5%9E%8B%E4%B8%8A%E8%BF%B07%E4%B8%AA%E6%8C%89%E9%A1%BA%E5%BA%8F-%E5%90%88%E8%B5%B7%E6%9D%A5%E7%A7%B0%E4%B8%BAosi%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.9.</span> <span class="nav-text">OSI模型：上述7个按顺序
+合起来称为OSI模型</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -203,7 +210,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/15/np-and-pd-datatype/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/19/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -216,12 +223,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="np and pd datatype | Hexo">
-      <meta itemprop="description" content="关于np和pd.dataFrame的区别">
+      <meta itemprop="name" content="网络结构学习 | Hexo">
+      <meta itemprop="description" content="计算机网络的结构以及协议">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          np and pd datatype
+          网络结构学习
         </h1>
 
         <div class="post-meta-container">
@@ -233,7 +240,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-12-15 03:51:14 / 修改时间：03:59:47" itemprop="dateCreated datePublished" datetime="2022-12-15T03:51:14+08:00">2022-12-15</time>
+      <time title="创建时间：2023-02-19 00:32:32 / 修改时间：00:40:20" itemprop="dateCreated datePublished" datetime="2023-02-19T00:32:32+08:00">2023-02-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -248,7 +255,7 @@
   
 </div>
 
-            <div class="post-description">关于np和pd.dataFrame的区别</div>
+            <div class="post-description">计算机网络的结构以及协议</div>
         </div>
       </header>
 
@@ -256,22 +263,48 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="numpy-array">numpy array</h1>
+        <h1 id="网络结构">网络结构</h1>
+<h2 id="物理层physical-layer定义物理介质接口和传输速率">物理层（Physical
+Layer）:定义物理介质、接口和传输速率</h2>
 <ul>
-<li><p>创建方式</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a=np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],dtype=<span class="built_in">float</span>,copy=<span class="literal">True</span>)  <span class="comment"># 其作用是将其他类型的数据转化为np.array</span></span><br><span class="line"><span class="comment"># np.array的创建 有以下几种方式</span></span><br><span class="line"><span class="comment">#创建空数组</span></span><br><span class="line">np.empty((<span class="number">3</span>,<span class="number">4</span>))</span><br><span class="line"><span class="comment">## 创建全零</span></span><br><span class="line">np.zeros((<span class="number">3</span>,<span class="number">4</span>))</span><br><span class="line">np.zeros_like(a)</span><br><span class="line"><span class="comment">#创建全一</span></span><br><span class="line">np.ones((<span class="number">3</span>,<span class="number">4</span>),order=<span class="string">&#x27;F&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p>RS-232（串口）</p></li>
+<li><p>IEEE 802.3（以太网）</p></li>
+<li><p>EEE 802.11（Wi-Fi）</p></li>
 </ul>
-<h1 id="pd.dataframe">pd.dataFrame</h1>
+<h2 id="数据链路层data-link-layer提供可靠的数据传输检测和纠正传输错误">数据链路层（Data
+Link Layer）:提供可靠的数据传输，检测和纠正传输错误</h2>
+<h3 id="它负责将比特流组装成帧frame并进行差错控制">它负责将比特流组装成帧（Frame）并进行差错控制</h3>
 <ul>
-<li><p>创建方法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">b= pd.DataFrame()</span><br><span class="line">b[][] <span class="comment">#等同于b[].values[] 第一个[]的切片为serial 第二个的切片为np.array</span></span><br></pre></td></tr></table></figure></li>
-<li><p>np的一维会被当成df的一个serial 也就是可以认为是一列</p></li>
-<li><p>通过df的切片访问到的是serial对象<br>
-</p></li>
-<li><p>通过serial对象的values可以变为np.array</p></li>
-<li><p>这时对np.array就可以进行切片得到单元格的数据</p></li>
-<li><p>还可以通过对df的行列同时进行切片得到np类型数据</p></li>
+<li>Ethernet（以太网）</li>
+<li>MAC（介质访问控制）</li>
 </ul>
+<h2 id="网络层network-layer确定数据的最佳路径实现数据包的传输">网络层（Network
+Layer）:确定数据的最佳路径，实现数据包的传输</h2>
+<p>IP（网际协议）</p>
+<p>ICMP（Internet控制报文协议）</p>
+<h2 id="传输层transport-layer">传输层（Transport Layer）</h2>
+<p>TCP（传输控制协议）</p>
+<p>UDP（用户数据报协议）</p>
+<p>SCTP（流控制传输协议）</p>
+<h2 id="会话层session-layer">会话层（Session Layer）</h2>
+<p>SSL（安全套接层协议）</p>
+<p>TLS（传输层安全协议）</p>
+<h2 id="表示层presentation-layer">表示层（Presentation Layer）</h2>
+<p>ASCII（美国信息交换标准代码）</p>
+<p>Unicode（通用字符集）</p>
+<h2 id="应用层application-layer">应用层（Application Layer）</h2>
+<p>HTTP（超文本传输协议）</p>
+<p>FTP（文件传输协议）</p>
+<p>SMTP（简单邮件传输协议）</p>
+<p>Telnet（远程终端协议）</p>
+<h2 id="tcpip-网络层开始的5个层大致为tcpip">TCP/IP
+：网络层开始的5个层大致为TCP/IP</h2>
+<h2 id="osi模型上述7个按顺序-合起来称为osi模型">OSI模型：上述7个按顺序
+合起来称为OSI模型</h2>
+<figure>
+<img src="/2023/02/19/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0/网络结构.png" alt="网络结构">
+<figcaption aria-hidden="true">网络结构</figcaption>
+</figure>
 
     </div>
 
@@ -285,14 +318,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/12/09/Chatgpt/" rel="prev" title="Chatgpt">
-                  <i class="fa fa-chevron-left"></i> Chatgpt
+                <a href="/2023/02/18/alist-%E6%8C%82%E8%BD%BD%E7%BD%91%E7%9B%98/" rel="prev" title="alist 挂载网盘">
+                  <i class="fa fa-chevron-left"></i> alist 挂载网盘
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/01/01/yearly-summary-and-plan/" rel="next" title="yearly summary and plan">
-                  yearly summary and plan <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>

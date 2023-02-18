@@ -737,4 +737,54 @@ AList文档 (nn.ci)</a>，点击刷新令牌来获取</p>
         <category>教程</category>
       </categories>
   </entry>
+  <entry>
+    <title>网络结构学习</title>
+    <url>/2023/02/19/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="网络结构">网络结构</h1>
+<h2 id="物理层physical-layer定义物理介质接口和传输速率">物理层（Physical
+Layer）:定义物理介质、接口和传输速率</h2>
+<ul>
+<li><p>RS-232（串口）</p></li>
+<li><p>IEEE 802.3（以太网）</p></li>
+<li><p>EEE 802.11（Wi-Fi）</p></li>
+</ul>
+<h2 id="数据链路层data-link-layer提供可靠的数据传输检测和纠正传输错误">数据链路层（Data
+Link Layer）:提供可靠的数据传输，检测和纠正传输错误</h2>
+<h3 id="它负责将比特流组装成帧frame并进行差错控制">它负责将比特流组装成帧（Frame）并进行差错控制</h3>
+<ul>
+<li>Ethernet（以太网）</li>
+<li>MAC（介质访问控制）</li>
+</ul>
+<h2 id="网络层network-layer确定数据的最佳路径实现数据包的传输">网络层（Network
+Layer）:确定数据的最佳路径，实现数据包的传输</h2>
+<p>IP（网际协议）</p>
+<p>ICMP（Internet控制报文协议）</p>
+<h2 id="传输层transport-layer">传输层（Transport Layer）</h2>
+<p>TCP（传输控制协议）</p>
+<p>UDP（用户数据报协议）</p>
+<p>SCTP（流控制传输协议）</p>
+<h2 id="会话层session-layer">会话层（Session Layer）</h2>
+<p>SSL（安全套接层协议）</p>
+<p>TLS（传输层安全协议）</p>
+<h2 id="表示层presentation-layer">表示层（Presentation Layer）</h2>
+<p>ASCII（美国信息交换标准代码）</p>
+<p>Unicode（通用字符集）</p>
+<h2 id="应用层application-layer">应用层（Application Layer）</h2>
+<p>HTTP（超文本传输协议）</p>
+<p>FTP（文件传输协议）</p>
+<p>SMTP（简单邮件传输协议）</p>
+<p>Telnet（远程终端协议）</p>
+<h2 id="tcpip-网络层开始的5个层大致为tcpip">TCP/IP
+：网络层开始的5个层大致为TCP/IP</h2>
+<h2 id="osi模型上述7个按顺序-合起来称为osi模型">OSI模型：上述7个按顺序
+合起来称为OSI模型</h2>
+<figure>
+<img src="/2023/02/19/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0/网络结构.png" alt="网络结构">
+<figcaption aria-hidden="true">网络结构</figcaption>
+</figure>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+  </entry>
 </search>
