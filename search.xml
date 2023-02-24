@@ -797,4 +797,46 @@ Layer）:确定数据的最佳路径，实现数据包的传输</h2>
         <category>编程</category>
       </categories>
   </entry>
+  <entry>
+    <title>GRU算法解析</title>
+    <url>/2023/02/24/GRU%E7%AE%97%E6%B3%95%E8%A7%A3%E6%9E%90/</url>
+    <content><![CDATA[<p>图1表示了GRU的网络模型，看到每个记忆单元有两个门控单元，更新门和遗忘门，公式(1)-(4)可以表示具体的操作，</p>
+<figure>
+<img src="/2023/02/24/GRU%E7%AE%97%E6%B3%95%E8%A7%A3%E6%9E%90/GRU.jpg" alt="GRU">
+<figcaption aria-hidden="true">GRU</figcaption>
+</figure>
+<p>%% GRU算法构成 <span class="math inline">\(\begin{equation}  r_t =
+\sigma(W_r \cdot [h_{t-1},x_t]+ b_r) \tag{1} \end{equation}\)</span>
+<span class="math inline">\(\begin{equation}  z_t = \sigma(W_z \cdot
+[h_{t-1},x_t]+ b_z) \tag{2} \end{equation}\)</span> <span class="math inline">\(\begin{equation}  \hat{h_t} =
+tanh(W_h\cdot[h_{t-1},x_t]+b_h) \tag{3} \end{equation}\)</span> <span class="math inline">\(\begin{equation}  h_t = (1-z_t)h{t-1} +
+z_t\hat{h_t} \tag{4} \end{equation}\)</span> 在上述的公式中 <span class="math inline">\(r_t\)</span>是遗忘门，<span class="math inline">\(z_t\)</span>是更新门，<span class="math inline">\(\hat{h_t}\)</span>代表隐藏状态的更新值， <span class="math inline">\(h_t\)</span>和<span class="math inline">\(x_t\)</span>表示当前时刻的输入和隐藏状态，<span class="math inline">\(\sigma\)</span>表示的是sigmoid函数。 <span class="math inline">\(\begin{equation}  sigmoid : \sigma(x) =
+\frac{1}{1-e^{-x}} \tag{} \end{equation}\)</span>
+遗忘门和更新门通过sigmoid函数进行激活，隐藏状态的更新值通过tanh函数，
+<span class="math inline">\(W_r,W_z,W_h\)</span>分别代表重置门<span class="math inline">\(r_t\)</span>，更新门<span class="math inline">\(z_t\)</span>以及更新隐藏状态<span class="math inline">\(\hat{h_t}\)</span>的权重矩阵，<span class="math inline">\(b_r,b_z,b_h\)</span>分别是<span class="math inline">\(r_t，z_t，\hat{h_t}\)</span>的偏置矩阵，更新门<span class="math inline">\(z_t\)</span>代表有多少比例的t-1时刻的隐藏状态<span class="math inline">\(h_{t-1}\)</span>被更新到当前状态，重置门<span class="math inline">\(r_t\)</span>重置了<span class="math inline">\(h_{t-1}\)</span>的信息<span class="math inline">\(r_t\)</span>。</p>
+<h2 id="通用的rnn模块调用方法">通用的RNN模块调用方法</h2>
+<p>调用格式torch.nn.RNN（） 或者torch.nn.GRU（）</p>
+<p>其中的参数有如下：</p>
+<figure>
+<img src="/2023/02/24/GRU%E7%AE%97%E6%B3%95%E8%A7%A3%E6%9E%90/image-20230224232010563.png" alt="image-20230224232010563">
+<figcaption aria-hidden="true">image-20230224232010563</figcaption>
+</figure>
+<p>其中需要注意的是，input_size是指输入数据的特征维度，比如传感器的时序数据就是一维的，表格类的可以是2维的。这里不是指时序的序列长度。</p>
+<p>调用时可以通过batch_first参数来调整seq和batch_size的位置</p>
+<figure>
+<img src="/2023/02/24/GRU%E7%AE%97%E6%B3%95%E8%A7%A3%E6%9E%90/image-20230224232355005.png" alt="image-20230224232355005">
+<figcaption aria-hidden="true">image-20230224232355005</figcaption>
+</figure>
+<p>bidirectional参数可以选择双向的RNN网络</p>
+<h2 id="参数个数的计算">参数个数的计算</h2>
+<p>GRU网络的计算</p>
+<p>3<em>[（d+h）h+h] </em>L + [(2d+h)+1]h *(L-1)</p>
+<p>其中d为输入的大小，h为隐藏层的大小<span class="math inline">\(h_{dim}\)</span> L为GRU的num_layers</p>
+<p>如果时LSTM前面的3 改为4</p>
+<p>如果是RNN改为2</p>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+  </entry>
 </search>
