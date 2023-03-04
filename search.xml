@@ -839,4 +839,68 @@ z_t\hat{h_t} \tag{4} \end{equation}\)</span> 在上述的公式中 <span class="
         <category>编程</category>
       </categories>
   </entry>
+  <entry>
+    <title>AI绘画教程</title>
+    <url>/2023/03/05/AI%E7%BB%98%E7%94%BB%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="软件环境安装">软件环境安装</h1>
+<h1 id="软件使用教程">软件使用教程</h1>
+<p>启动软件：在安装目录下使用</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">python launch.py</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2023/03/05/AI%E7%BB%98%E7%94%BB%E6%95%99%E7%A8%8B/image-20230305010307598.png" alt="image-20230305010307598">
+<figcaption aria-hidden="true">image-20230305010307598</figcaption>
+</figure>
+<p>上述界面为启动成功。</p>
+<p>接着将连接复制在浏览器打开。打开大致的样子事下图，当是是英文版的
+，需要汉化的自己找教程。</p>
+<figure>
+<img src="/2023/03/05/AI%E7%BB%98%E7%94%BB%E6%95%99%E7%A8%8B/image-20230305010448100.png" alt="image-20230305010448100">
+<figcaption aria-hidden="true">image-20230305010448100</figcaption>
+</figure>
+<h2 id="接着想介绍几个概念">接着想介绍几个概念</h2>
+<h3 id="大模型就是当前ai绘画的总体的风格在图中这个位置可以选择">大模型：就是当前AI绘画的总体的风格,在图中这个位置可以选择</h3>
+<figure>
+<img src="/2023/03/05/AI%E7%BB%98%E7%94%BB%E6%95%99%E7%A8%8B/image-20230305010655188.png" alt="image-20230305010655188">
+<figcaption aria-hidden="true">image-20230305010655188</figcaption>
+</figure>
+<p>本地路径在这个文件夹下</p>
+<figure>
+<img src="/2023/03/05/AI%E7%BB%98%E7%94%BB%E6%95%99%E7%A8%8B/image-20230305010930498.png" alt="image-20230305010930498">
+<figcaption aria-hidden="true">image-20230305010930498</figcaption>
+</figure>
+<h3 id="lora模型-主要是补充一些大模型中的情况">lora：模型
+主要是补充一些大模型中的情况</h3>
+<p>通过插件或者自带的文件夹进行添加</p>
+<p>自带的选择方法;</p>
+<figure>
+<img src="/2023/03/05/AI%E7%BB%98%E7%94%BB%E6%95%99%E7%A8%8B/image-20230305011037852.png" alt="image-20230305011037852">
+<figcaption aria-hidden="true">image-20230305011037852</figcaption>
+</figure>
+<p>文件所在路径</p>
+<figure>
+<img src="/2023/03/05/AI%E7%BB%98%E7%94%BB%E6%95%99%E7%A8%8B/image-20230305011111876.png" alt="image-20230305011111876">
+<figcaption aria-hidden="true">image-20230305011111876</figcaption>
+</figure>
+<p>插件添加(自己搜索插件安装方法)：</p>
+<figure>
+<img src="/2023/03/05/AI%E7%BB%98%E7%94%BB%E6%95%99%E7%A8%8B/image-20230305011244834.png" alt="image-20230305011244834">
+<figcaption aria-hidden="true">image-20230305011244834</figcaption>
+</figure>
+<p>文件路径</p>
+<figure>
+<img src="/2023/03/05/AI%E7%BB%98%E7%94%BB%E6%95%99%E7%A8%8B/image-20230305011347614.png" alt="image-20230305011347614">
+<figcaption aria-hidden="true">image-20230305011347614</figcaption>
+</figure>
+<h3 id="vae模型主要功能是使得生产的人物五官啥的更自然不容易出现歪手歪脚的情况有的大模型有配套的vae也可以使用通用的如下图中选中的">VAE模型：主要功能是使得生产的人物五官啥的更自然，不容易出现歪手歪脚的情况。有的大模型有配套的VAE。也可以使用通用的,如下图中选中的</h3>
+<figure>
+<img src="/2023/03/05/AI%E7%BB%98%E7%94%BB%E6%95%99%E7%A8%8B/image-20230305011747081.png" alt="image-20230305011747081">
+<figcaption aria-hidden="true">image-20230305011747081</figcaption>
+</figure>
+<p>本地地址：<img src="/2023/03/05/AI%E7%BB%98%E7%94%BB%E6%95%99%E7%A8%8B/image-20230305011937129.png" alt="image-20230305011937129"></p>
+<h1 id="模型训练方法">模型训练方法</h1>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+  </entry>
 </search>
