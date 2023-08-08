@@ -238,7 +238,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-08-09 00:50:00" itemprop="dateModified" datetime="2023-08-09T00:50:00+08:00">2023-08-09</time>
+      <time title="修改时间：2023-08-09 00:52:28" itemprop="dateModified" datetime="2023-08-09T00:52:28+08:00">2023-08-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -260,54 +260,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="申请一个阿里云esc">申请一个阿里云ESC</h2>
-<h2 id="section"></h2>
-<h2 id="image-20230808230155876"><img src="/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230808230155876.png" alt="image-20230808230155876"></h2>
-<p>创建一个实例，通过公网IP进行登录</p>
-<figure>
-<img src="/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230808230316460.png" alt="image-20230808230316460">
-<figcaption aria-hidden="true">image-20230808230316460</figcaption>
-</figure>
-<p>服务器的配置需要设置为linux系统的22.04</p>
-<figure>
-<img src="/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230808230504758.png" alt="image-20230808230504758">
-<figcaption aria-hidden="true">image-20230808230504758</figcaption>
-</figure>
-<h2 id="部署环境配置">部署环境配置</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> bash Anaconda3-2023.03-1-Linux-x86_64.sh	<span class="comment">## 安装conda</span></span><br><span class="line"> conda -V <span class="comment">## 查看是否安装成功  conda 23.3.1</span></span><br><span class="line"> conda create -n  pytorch-2023 python=3.9.16 <span class="comment">## 创建一个虚拟环境</span></span><br><span class="line"> <span class="built_in">source</span> activate pythorch-2023  <span class="comment">## 激活虚拟环境</span></span><br><span class="line"> conda list <span class="comment">## 查看虚拟环境下 已经安装的包</span></span><br><span class="line"> git -V  <span class="comment">## 查看git 是否安装  （用于下载github的工程）</span></span><br><span class="line"> git --version </span><br><span class="line"> <span class="comment">###### 配置GitHub的远程链接</span></span><br><span class="line"> ssh-keygen -t rsa -b 4096</span><br><span class="line"> <span class="built_in">cat</span> ~/.ssh/id_rsa.pub | ssh root@gassensor <span class="string">&quot;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span></span><br><span class="line"> git config --global http.proxy</span><br><span class="line"><span class="built_in">cat</span> ~/.ssh/id_rsa.pub | ssh root@gassensor <span class="string">&quot;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span></span><br><span class="line">git config --global user.name <span class="string">&quot;gassensor&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;12131139@mail.sustech.edu.cn&quot;</span></span><br><span class="line">ssh-keygen -C <span class="string">&#x27;12131139@mail.sustech.edu.cn&#x27;</span> -t rsa</span><br><span class="line"><span class="comment">#####</span></span><br><span class="line"><span class="built_in">cd</span> ./.ssh</span><br><span class="line"><span class="built_in">cat</span> id_rsa.pub</span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<p>rsa 密钥类似于下面的 （github的密钥 需要去搜索一下流程）</p>
-<figure>
-<img src="/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230809003200245.png" alt="image-20230809003200245">
-<figcaption aria-hidden="true">image-20230809003200245</figcaption>
-</figure>
-<figure>
-<img src="/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230809003458254.png" alt="image-20230809003458254">
-<figcaption aria-hidden="true">image-20230809003458254</figcaption>
-</figure>
-<h3 id="需要配置清华的源">需要配置清华的源</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">  209  conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  210  conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">  211  conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  212  conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">  213  conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/</span><br><span class="line">  214  conda config --<span class="built_in">set</span> show_channel_urls <span class="built_in">yes</span></span><br><span class="line">  215  conda config --show channels</span><br><span class="line"><span class="comment">### 需要配置清华的源</span></span><br></pre></td></tr></table></figure>
-<h3 id="安装torch">安装torch</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision torchaudio cpuonly -c pytorch</span><br><span class="line"> conda install importlib</span><br><span class="line"> pip install d2l</span><br><span class="line">pip install flask</span><br><span class="line">pip install d2l==0.17.6</span><br><span class="line">pip install  numpy==1.21.5</span><br><span class="line">pip install  pandas==1.2.4</span><br><span class="line">pip install torchsummary</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="安装好的库list">安装好的库list</h3>
-<h3 id="运行程序">运行程序</h3>
-<p>python seriver.py</p>
-<h2 id="云服务器上的配置">云服务器上的配置</h2>
-<p>网络配置 打开网关</p>
-<figure>
-<img src="/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230809004724573.png" alt="image-20230809004724573">
-<figcaption aria-hidden="true">image-20230809004724573</figcaption>
-</figure>
-<p>将发送端的 的ip 类型添加</p>
-<figure>
-<img src="/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230809004823349.png" alt="image-20230809004823349">
-<figcaption aria-hidden="true">image-20230809004823349</figcaption>
-</figure>
-<h2 id="postman软件演示结果">postman软件演示结果</h2>
-<figure>
-<img src="/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230809004926045.png" alt="image-20230809004926045">
-<figcaption aria-hidden="true">image-20230809004926045</figcaption>
-</figure>
-
+          <p>阿里云服务器部署气体传感算法教程</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
