@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","width":400,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="申请一个阿里云ESC   创建一个实例，通过公网IP进行登录   image-20230808230316460  服务器的配置需要设置为linux系统的22.04   image-20230808230504758  部署环境配置 12345678910111213141516171819 bash Anaconda3-2023.03-1-Linux-x86_64.s">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="阿里云服务器部署气体传感算法">
+<meta property="og:url" content="http://example.com/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:site_name" content="ZΘro&#39;s blog">
+<meta property="og:description" content="申请一个阿里云ESC   创建一个实例，通过公网IP进行登录   image-20230808230316460  服务器的配置需要设置为linux系统的22.04   image-20230808230504758  部署环境配置 12345678910111213141516171819 bash Anaconda3-2023.03-1-Linux-x86_64.s">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230808230155876.png">
+<meta property="og:image" content="http://example.com/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230808230316460.png">
+<meta property="og:image" content="http://example.com/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230808230504758.png">
+<meta property="og:image" content="http://example.com/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230809003200245.png">
+<meta property="og:image" content="http://example.com/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230809003458254.png">
+<meta property="og:image" content="http://example.com/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230809004724573.png">
+<meta property="og:image" content="http://example.com/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230809004823349.png">
+<meta property="og:image" content="http://example.com/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230809004926045.png">
+<meta property="article:published_time" content="2023-08-08T14:57:40.000Z">
+<meta property="article:modified_time" content="2023-08-08T16:50:00.384Z">
+<meta property="article:author" content="Hware-magic">
+<meta property="article:tag" content="学习 生活 记录">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230808230155876.png">
+
+
+<link rel="canonical" href="http://example.com/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/","path":"2023/08/08/阿里云服务器部署气体传感算法/","title":"阿里云服务器部署气体传感算法"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>阿里云服务器部署气体传感算法 | ZΘro's blog</title>
+  
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">ZΘro's blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Virtue|Truth|Advance</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B3%E8%AF%B7%E4%B8%80%E4%B8%AA%E9%98%BF%E9%87%8C%E4%BA%91esc"><span class="nav-number">1.</span> <span class="nav-text">申请一个阿里云ESC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-number">2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#image-20230808230155876"><span class="nav-number">3.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">部署环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9C%80%E8%A6%81%E9%85%8D%E7%BD%AE%E6%B8%85%E5%8D%8E%E7%9A%84%E6%BA%90"><span class="nav-number">4.1.</span> <span class="nav-text">需要配置清华的源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85torch"><span class="nav-number">4.2.</span> <span class="nav-text">安装torch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%A5%BD%E7%9A%84%E5%BA%93list"><span class="nav-number">4.3.</span> <span class="nav-text">安装好的库list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F"><span class="nav-number">4.4.</span> <span class="nav-text">运行程序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-number">5.</span> <span class="nav-text">云服务器上的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#postman%E8%BD%AF%E4%BB%B6%E6%BC%94%E7%A4%BA%E7%BB%93%E6%9E%9C"><span class="nav-number">6.</span> <span class="nav-text">postman软件演示结果</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Hware-magic</p>
+  <div class="site-description" itemprop="description">记录和整理也是一种学习</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/HWare-magic" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;HWare-magic" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/zyi96131@gmail.com" title="E-Mail → zyi96131@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hware-magic">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZΘro's blog">
+      <meta itemprop="description" content="记录和整理也是一种学习">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="阿里云服务器部署气体传感算法 | ZΘro's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          阿里云服务器部署气体传感算法
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-08-08 22:57:40" itemprop="dateCreated datePublished" datetime="2023-08-08T22:57:40+08:00">2023-08-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-08-09 00:50:00" itemprop="dateModified" datetime="2023-08-09T00:50:00+08:00">2023-08-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="申请一个阿里云esc">申请一个阿里云ESC</h2>
+<h2 id="section"></h2>
+<h2 id="image-20230808230155876"><img src="/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230808230155876.png" alt="image-20230808230155876"></h2>
+<p>创建一个实例，通过公网IP进行登录</p>
+<figure>
+<img src="/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230808230316460.png" alt="image-20230808230316460">
+<figcaption aria-hidden="true">image-20230808230316460</figcaption>
+</figure>
+<p>服务器的配置需要设置为linux系统的22.04</p>
+<figure>
+<img src="/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230808230504758.png" alt="image-20230808230504758">
+<figcaption aria-hidden="true">image-20230808230504758</figcaption>
+</figure>
+<h2 id="部署环境配置">部署环境配置</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> bash Anaconda3-2023.03-1-Linux-x86_64.sh	<span class="comment">## 安装conda</span></span><br><span class="line"> conda -V <span class="comment">## 查看是否安装成功  conda 23.3.1</span></span><br><span class="line"> conda create -n  pytorch-2023 python=3.9.16 <span class="comment">## 创建一个虚拟环境</span></span><br><span class="line"> <span class="built_in">source</span> activate pythorch-2023  <span class="comment">## 激活虚拟环境</span></span><br><span class="line"> conda list <span class="comment">## 查看虚拟环境下 已经安装的包</span></span><br><span class="line"> git -V  <span class="comment">## 查看git 是否安装  （用于下载github的工程）</span></span><br><span class="line"> git --version </span><br><span class="line"> <span class="comment">###### 配置GitHub的远程链接</span></span><br><span class="line"> ssh-keygen -t rsa -b 4096</span><br><span class="line"> <span class="built_in">cat</span> ~/.ssh/id_rsa.pub | ssh root@gassensor <span class="string">&quot;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span></span><br><span class="line"> git config --global http.proxy</span><br><span class="line"><span class="built_in">cat</span> ~/.ssh/id_rsa.pub | ssh root@gassensor <span class="string">&quot;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span></span><br><span class="line">git config --global user.name <span class="string">&quot;gassensor&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;12131139@mail.sustech.edu.cn&quot;</span></span><br><span class="line">ssh-keygen -C <span class="string">&#x27;12131139@mail.sustech.edu.cn&#x27;</span> -t rsa</span><br><span class="line"><span class="comment">#####</span></span><br><span class="line"><span class="built_in">cd</span> ./.ssh</span><br><span class="line"><span class="built_in">cat</span> id_rsa.pub</span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>rsa 密钥类似于下面的 （github的密钥 需要去搜索一下流程）</p>
+<figure>
+<img src="/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230809003200245.png" alt="image-20230809003200245">
+<figcaption aria-hidden="true">image-20230809003200245</figcaption>
+</figure>
+<figure>
+<img src="/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230809003458254.png" alt="image-20230809003458254">
+<figcaption aria-hidden="true">image-20230809003458254</figcaption>
+</figure>
+<h3 id="需要配置清华的源">需要配置清华的源</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">  209  conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  210  conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">  211  conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  212  conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">  213  conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/</span><br><span class="line">  214  conda config --<span class="built_in">set</span> show_channel_urls <span class="built_in">yes</span></span><br><span class="line">  215  conda config --show channels</span><br><span class="line"><span class="comment">### 需要配置清华的源</span></span><br></pre></td></tr></table></figure>
+<h3 id="安装torch">安装torch</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision torchaudio cpuonly -c pytorch</span><br><span class="line"> conda install importlib</span><br><span class="line"> pip install d2l</span><br><span class="line">pip install flask</span><br><span class="line">pip install d2l==0.17.6</span><br><span class="line">pip install  numpy==1.21.5</span><br><span class="line">pip install  pandas==1.2.4</span><br><span class="line">pip install torchsummary</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="安装好的库list">安装好的库list</h3>
+<h3 id="运行程序">运行程序</h3>
+<p>python seriver.py</p>
+<h2 id="云服务器上的配置">云服务器上的配置</h2>
+<p>网络配置 打开网关</p>
+<figure>
+<img src="/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230809004724573.png" alt="image-20230809004724573">
+<figcaption aria-hidden="true">image-20230809004724573</figcaption>
+</figure>
+<p>将发送端的 的ip 类型添加</p>
+<figure>
+<img src="/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230809004823349.png" alt="image-20230809004823349">
+<figcaption aria-hidden="true">image-20230809004823349</figcaption>
+</figure>
+<h2 id="postman软件演示结果">postman软件演示结果</h2>
+<figure>
+<img src="/2023/08/08/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E6%B0%94%E4%BD%93%E4%BC%A0%E6%84%9F%E7%AE%97%E6%B3%95/image-20230809004926045.png" alt="image-20230809004926045">
+<figcaption aria-hidden="true">image-20230809004926045</figcaption>
+</figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/07/27/%E8%B5%84%E6%BA%90%E7%BD%91%E7%AB%99%E6%95%B4%E5%90%88/" rel="prev" title="资源网站整合">
+                  <i class="fa fa-chevron-left"></i> 资源网站整合
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hware-magic</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"per_page":true,"cdn":"//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML","tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
